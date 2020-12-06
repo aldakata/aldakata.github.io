@@ -1,2 +1,2 @@
 # aldakata.github.io
-aldakata.github.io
+https://aldakata.github.io/
