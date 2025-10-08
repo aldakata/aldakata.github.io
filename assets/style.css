@@ -1,0 +1,142 @@
+body {
+    font-family: "Courier new", Courier, monospace;
+    margin: 0;
+    padding: 0;
+    /* background-color: rgb(253, 246, 227); */
+    color: #222;
+    line-height: 1.6;
+}
+
+.container {
+max-width: 800px;
+margin: auto;
+padding: 2rem;
+}
+
+h1, h2, h3 {
+margin-top: 1.5rem;
+color: #222;
+}
+
+a {
+color: #007acc;
+text-decoration: none;
+}
+
+a:hover {
+text-decoration: underline;
+}
+
+#news ul {
+list-style: none;
+padding: 0;
+}
+
+#news li {
+margin: 0.5rem 0;
+}
+
+
+
+/* Paper Cards */
+.papers-grid {
+    /* display: grid; */
+    /* grid-template-columns: 1fr; */
+    gap: 1rem;
+}
+
+.paper-card {
+    border-radius: 12px;
+    padding: 0.3rem 0rem;
+}
+.paper-card h3 {
+    display: inline;
+    margin-right: 0.5rem;
+}
+
+
+.paper-header {
+display: flex;
+justify-content: space-between;
+align-items: baseline;
+margin-bottom: 0.5rem;
+}
+
+.paper-card h3 {
+margin: 0;
+font-size: 1.1rem;
+line-height: 1.4;
+}
+
+.paper-card a {
+    color: #000000;
+    text-decoration: none;
+}
+.paper-card a:hover {
+    text-decoration: underline;
+}
+
+.paper-conference {
+font-size: 1rem;
+font-weight: 600;
+color: #555;
+}
+
+.paper-authors {
+margin: 0;
+font-size: 0.9rem;
+color: #666;
+}
+
+.first-author-name {
+    text-decoration: underline;
+
+}
+
+/* Badges */
+.paper-badges {
+    margin-top: 0.6rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.badge {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.badge-oral {
+    color: #ff0400; /* blue text */
+}
+
+.badge-spotlight {
+    color: #ffbb00fb; /* orange text */
+}
+
+.badge-award {
+    color: #f5a105; /* pink/red text */
+}
+
+.profile-container {
+    display: flex;
+    align-items: flex-start; /* aligns image top with paragraph */
+    gap: 2rem; /* space between image and text */
+    flex-wrap: wrap; /* allows stacking on smaller screens */
+}
+
+.profile-section {
+    flex: 0 0 300px; /* fixed width for the image column */
+    padding: 1.3rem 0;
+
+}
+
+.profile-image {
+    width: 100%;      /* fills the column width */
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.profile-text {
+    flex: 1; /* text takes remaining space */
+}

@@ -1,0 +1,12 @@
+# main text of home
+title: "Albert Catalan Tatjer – Machine Learning Efficiency"
+bio: 🗻
+collections:
+    news:
+        output: true
+    papers:
+        output: true
+    code:
+        output: true
+
+analytics_google: 'G-R6557GM4YT'

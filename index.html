@@ -1,0 +1,100 @@
+---
+layout: none
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ site.title }}</title>
+    <link rel="stylesheet" href="assets/style.css">
+    {% if site.analytics_google %}
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics_google }}"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '{{ site.analytics_google }}');
+        </script>
+    {% endif %}
+</head>
+<body>
+    <div class="container">
+    <!-- Introduction -->
+    <section id="intro">
+        <h1>Albert Catalan-Tatjer</h1>
+        <div class="profile-links">
+            <a href="mailto:%61%6C%62%65%72%74.%63%61%74%61%6C%61%6E-%74%61%74%6A%65%72@%74%75%65.%65%6C%6C%69%73.%65%75" title="email">
+                name.last-name[at]tue.ellis.eu
+            </a> |
+            <a href="https://scholar.google.com/citations?user=9ZDnyAMAAAAJ&hl=en">Google Scholar</a> |
+            <a href="https://github.com/aldakata">GitHub</a>
+        </div>
+        <div class="profile-container">
+            <div class="profile-section">
+                <img src="assets/MPI_portrait.JPG" alt="Profile Picture" class="profile-image">
+            </div>
+            <div class="profile-text">
+                <p>
+                    I am a first year PhD student at the <a href="https://institute-tue.ellis.eu/seal">safety- & efficiency- aligned learning (🦭) group</a> advised by <a href="https://jonasgeiping.github.io/">Jonas Geiping</a> funded by 
+                    <a href="https://imprs.is.mpg.de/">IMPRS-IS</a> and <a href="https://www.amazon.science/">Amazon Science Hub</a>.
+                    I am excited about most things deep learning especially optimization and inference efficiency. 
+                    Fundamental to my research is the <strong>implementation of mathematical ideas on computer technologies</strong>.
+                    On my free time I enjoy science and sports.
+                </p>
+        
+                <p>
+                    I am always open to collaborations or project supervisions! Just drop me a message :).
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- News -->
+    <section id="news">
+        <h2>News</h2>
+        <ul>
+            {% assign sorted_news = site.news | sort: "date" | reverse %}
+            {% for item in sorted_news %}
+                <li><strong>{{ item.date | date: "%b %Y" }}:</strong> {{ item.title }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <!-- Papers -->
+    <section id="papers">
+        <h2>Publications</h2>
+            <div class="papers-grid">
+                {% assign sorted_papers = site.papers | sort: "year" | reverse %}
+                {% for paper in sorted_papers %}
+                    {% include paper-card.html paper=paper %}
+                {% endfor %}
+            </div>
+    </section>
+
+    <!-- Code -->
+    <!-- <section id="code">
+        <h2>Code</h2>
+            <div class="code-grid">
+                {% assign sorted_papers = site.code | sort: "year" | reverse %}
+                {% for paper in sorted_papers %}
+                    {% include paper-card.html paper=paper %}
+                {% endfor %}
+            </div>
+    </section> -->
+    <!-- Code -->
+    <!-- <section id="code">
+        <h2>Teaching</h2>
+            <div class="code-grid">
+                <ul>Software project <a href="http://www.ub.edu/grad/infes/fitxaInfe.jsp" >@Uni. Barcelona 2025</a></ul>
+                <ul>Introduction to Machine Learning <a href='https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/distributed-intelligence/home/'>@Uni. Tübingen 2024</a></ul>
+                <ul>Introduction to Machine Learning <a href="https://www.eml-munich.de/people/zeynep-akata#Teaching">@Uni. Tübingen 2023</a></ul>
+            </div>
+    </section> -->
+    </div>
+</body>
+<footer style="font-size: 12px; text-align: center; color: #666; margin-top: 2em;">
+    &copy; Albert Catalan-Tatjer {{ site.time | date: '%Y' }} ·
+    Last updated: {{ site.time | date: '%B %d, %Y' }}
+</footer>
+</html>
