@@ -111,11 +111,18 @@ color: #666;
 }
 
 .badge-spotlight {
-    color: #ffbb00fb; /* orange text */
+    color: #cc00fffb; /* orange text */
 }
 
 .badge-award {
     color: #f5a105; /* pink/red text */
+}
+
+.badge-spotlight a,
+.badge-spotlight a:visited,
+.badge-spotlight a:active {
+    color: inherit; /* keep same purple as .badge-spotlight */
+    text-decoration: none; /* optional — match your style */
 }
 
 .profile-container {
