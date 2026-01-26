@@ -10,7 +10,7 @@
         {% endfor %}
         {{ include.paper.authors | replace: "Albert Catalan-Tatjer", "<strong>Albert Catalan-Tatjer</strong>" }}.
     </span>
-    <span class="paper-conference">{{ include.paper.conference }} ({{ include.paper.year }})
+    <span class="paper-conference">{{ include.paper.conference }} {{ include.paper.year }}
         {% if include.paper.oral %}
             <span class="badge badge-oral">Oral</span>
         {% endif %}
