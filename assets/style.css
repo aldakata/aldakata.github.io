@@ -30,6 +30,8 @@ text-decoration: underline;
 #news ul {
 list-style: none;
 padding: 0;
+max-height: 200px;
+overflow-y: auto;
 }
 
 #news li {
