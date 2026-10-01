@@ -1,24 +1,15 @@
+{%- assign marker = "" -%}
+{%- if include.paper.first_authors.size > 1 -%}{%- assign marker = "*" -%}{%- endif -%}
 <div class="paper-card">
-    <h3>
-        <a href="{{ include.paper.link }}">{{ include.paper.title }}.</a>
-    </h3>
-    <span class>
-        {% for author in include.paper.first_authors %}
-        <span class="first-author-name">
-            {%- if author == "Albert Catalan-Tatjer" -%}<strong>{{ author }}</strong>{%- else -%}{{ author }}{%- endif -%}
-        </span>,
-        {% endfor %}
+    <a class="paper-title" href="{{ include.paper.link }}">{{ include.paper.title }}</a><br />
+    <span class="paper-authors">
+        {%- for author in include.paper.first_authors -%}
+        {%- if author == "Albert Catalan-Tatjer" -%}<strong>{{ author }}</strong>{%- else -%}{{ author }}{%- endif -%}{{ marker }},
+        {% endfor -%}
         {{ include.paper.authors | replace: "Albert Catalan-Tatjer", "<strong>Albert Catalan-Tatjer</strong>" }}.
-    </span>
-    <span class="paper-conference">{{ include.paper.conference }} {{ include.paper.year }}
-        {% if include.paper.oral %}
-            <span class="badge badge-oral">Oral</span>
-        {% endif %}
-        {% if include.paper.spotlight %}
-            <span class="badge badge-spotlight">{{ include.paper.spotlight }}</span>
-        {% endif %}
-        {% if include.paper.award %}
-            <span class="badge badge-award">{{ include.paper.award }}</span>
-        {% endif %}
-    </span>
+    </span><br />
+    <span class="paper-venue">{{ include.paper.conference }} {{ include.paper.year }}</span>
+    {%- if include.paper.oral %} · <span class="badge">Oral</span>{% endif -%}
+    {%- if include.paper.spotlight %} · <span class="badge">{{ include.paper.spotlight }}</span>{% endif -%}
+    {%- if include.paper.award %} · <span class="badge">{{ include.paper.award }}</span>{% endif %}
 </div>
