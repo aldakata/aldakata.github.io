@@ -1,4 +1,21 @@
-/* Plain, old-school HTML look: one narrow column, serif type, classic links. */
+/* One narrow column, Inter type, Max Planck green links. */
+
+/* Inter (latin subset), self-hosted so no visitor data goes to Google. */
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: url("fonts/inter-latin.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Inter";
+    font-style: italic;
+    font-weight: 400 700;
+    font-display: swap;
+    src: url("fonts/inter-latin-italic.woff2") format("woff2");
+}
 
 :root {
     --paper: #fbf9f1;
@@ -6,15 +23,15 @@
     --ink: #1f1f1f;
     --muted: #5e5a52;
     --rule: #c9c3b3;
-    --link: #1a0dab;
-    --visited: #5f2a8c;
+    --link: #116656; /* Max Planck Society green */
+    --link-hover: #0b4a3e;
     --accent: #9e1b1b;
 }
 
 /* Type grows with the window so the column fills big screens in proportion. */
 html {
     background: var(--paper);
-    font-size: clamp(17px, 0.43vw + 11.5px, 28px);
+    font-size: clamp(16px, 0.4vw + 11px, 26px);
     -webkit-text-size-adjust: 100%;
 }
 
@@ -22,9 +39,10 @@ body {
     margin: 0;
     background: var(--paper);
     color: var(--ink);
-    font-family: Georgia, "Times New Roman", Times, serif;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+        sans-serif;
     font-size: 1rem;
-    line-height: 1.6;
+    line-height: 1.65;
 }
 
 .container {
@@ -33,19 +51,17 @@ body {
     padding: 3rem 1rem 2rem;
 }
 
-a {
+a,
+a:visited {
     color: var(--link);
-    text-decoration: underline;
-    text-underline-offset: 0.12em;
+    text-decoration: none;
+    text-underline-offset: 0.18em;
     text-decoration-thickness: 1px;
 }
 
-a:visited {
-    color: var(--visited);
-}
-
 a:hover {
-    color: var(--accent);
+    color: var(--link-hover);
+    text-decoration: underline;
 }
 
 hr {
@@ -62,9 +78,9 @@ header {
 
 h1 {
     margin: 0 0 0.4rem;
-    font-size: 2.2rem;
-    font-weight: normal;
-    letter-spacing: 0.02em;
+    font-size: 1.75rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
     line-height: 1.2;
 }
 
@@ -77,11 +93,9 @@ h1 {
 /* Section headings */
 h2 {
     margin: 2.2rem 0 0.8rem;
-    font-size: 1.3rem;
-    font-weight: normal;
-    font-variant: small-caps;
-    letter-spacing: 0.08em;
-    text-transform: lowercase;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
 }
 
 /* Intro */
@@ -95,9 +109,12 @@ h2 {
 
 .profile-image {
     float: right;
-    width: 11rem;
-    height: 11rem;
+    width: 13rem;
+    height: auto;
+    /* Crop the 600x400 photo to just inside the shoulders (x≈88–468). */
+    aspect-ratio: 19 / 20;
     object-fit: cover;
+    object-position: 40% center;
     margin: 0.3rem 0 1rem 1.5rem;
     padding: 4px;
     background: #fff;
@@ -123,10 +140,10 @@ h2 {
 }
 
 .news-date {
-    font-family: "Courier New", Courier, monospace;
     font-size: 0.9rem;
+    font-variant-numeric: tabular-nums;
     color: var(--muted);
-    padding-top: 0.12rem;
+    padding-top: 0.08rem;
 }
 
 /* Publications */
@@ -135,7 +152,7 @@ h2 {
 }
 
 .paper-title {
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .paper-venue {
@@ -145,7 +162,7 @@ h2 {
 .badge {
     color: var(--accent);
     font-style: normal;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .badge a,
