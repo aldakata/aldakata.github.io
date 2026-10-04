@@ -108,17 +108,11 @@ h2 {
 }
 
 .profile-image {
+    /* Cut-out bust (transparent background) from MPI_portrait.JPG. */
     float: right;
-    width: 13rem;
+    width: 15rem;
     height: auto;
-    /* Crop the 600x400 photo to just inside the shoulders (x≈88–468). */
-    aspect-ratio: 19 / 20;
-    object-fit: cover;
-    object-position: 40% center;
     margin: 0.3rem 0 1rem 1.5rem;
-    padding: 4px;
-    background: #fff;
-    border: 1px solid var(--rule);
 }
 
 /* News */
